@@ -1,57 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Components/Navbar';
-import {getAuth , GoogleAuthProvider,signInWithPopup} from "firebase/auth"
-import Login from './Components/LogIn';
-import app from './Firebase'
-import { useState, useEffect } from 'react';
-import {getFirestore,doc, getDoc, setDoc} from "firebase/firestore"
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import {
+  getAuth,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import Login from "./Components/LogIn";
+import app from "./Firebase";
+import { useState, useEffect } from "react";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 function App() {
+  const [user, setUser] = useState(null);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const db = getFirestore(app);
 
-const [user, setUser] = useState(null)
-const auth= getAuth(app)
-const provider = new GoogleAuthProvider();
-const db = getFirestore(app);
+  async function checklogin() {
+    const docRef = doc(db, "users", user?.uid);
+    const docSnap = await getDoc(docRef);
 
-async function checklogin(){
-  const docRef = doc(db, "users", user?.uid);
-  const docSnap = await getDoc(docRef);
+    if (!docSnap.exists()) {
+      await setDoc(doc(db, "users", user?.uid), user);
+    }
+  }
+  async function signUp() {
+    await signInWithPopup(auth, provider)
+      .then((result) => {
+        const { displayName, email, photoURL, uid } = result.user;
+        setUser({
+          displayName: displayName,
+          email: email,
+          photoURL: photoURL,
+          uid: uid,
+        });
+        console.log(displayName, email, photoURL, uid);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
-if (!docSnap.exists()) {
-  await setDoc(doc(db, "users", user?.uid), user);
-  
-} 
-}
-async function signUp(){
+  async function Signout() {
+    await signOut(auth)
+      .then(() => {
+        // setUser(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
-  await signInWithPopup(auth, provider)
-  .then((result) => {
-    const {displayName,email,photoURL,uid} = result.user;
-    setUser({"displayName":displayName,"email":email,"photoURL":photoURL,"uid":uid});
-    console.log(displayName,email,photoURL,uid)
-  }).catch((error) => {
-    console.log(error)
-  });
-}
-
-
-
-useEffect(() => {
-if (!user){
-  return;
-}
-  checklogin()
-}, [user])
-
-
-
-
+  useEffect(() => {
+    if (!user) {
+      return;
+    }
+    checklogin();
+  }, [user]);
 
   return (
     <div className="App">
-    
-     {user? <Navbar/> : <Login login={signUp}/>}
+      {user ? <Navbar signot={Signout} /> : <Login login={signUp} />}
     </div>
   );
 }

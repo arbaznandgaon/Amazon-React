@@ -1,42 +1,101 @@
-// "use client"
 import React from 'react'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import SearchIcon from '@mui/icons-material/Search';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 
-
-
-
-function Navbar() {
+function Navbar({signot,...props}) {
   return (
-    <div className='space-x-4 w-full h-16 bg-gray-900  flex items-center px-4'>
-<img className='w-28' src='https://pngimg.com/uploads/amazon/amazon_PNG11.png '/>
-<div className='text-white flex flex-col'>
-    <a className='ml-7 text-xs'>Hello </a>
-   
-    <a className='font-semibold'> <LocationOnIcon/> Select your address</a>
+    <div>
+        
+        <div className='h-16 w-screen flex items-center  space-x-2 px-2 py-1 bg-[#131921]' >
+
+        <img src='https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png' className='h-full w-32 border border-[#131921] hover:border-white '></img>
+
+        <div className='space-y-1  items-center border border-[#131921] hover:border-white px-2 '>
+            
+            <p className='text-white px-2 text-sm'>Home</p>
+            <p className='text-bold text-xs text-white'><LocationOnIcon/>Bijapur</p>
+
+        </div>
+
+        <div className='flex  h-12'> 
+            <p className='bg-slate-400 p-2  rounded-l border-yellow-300 text-base'>All<ArrowDropDownIcon></ArrowDropDownIcon></p>
+            <input placeholder='' className=' w-[48rem]'></input>
+            <button className='bg-yellow-400 w-10  px-2'><SearchIcon className='h-6'/></button>
+        
+
+            <div className='h-12 px-1 flex'> 
+           
+            <button class="peer flex px-2 py-2 border border-[#131921] hover:border-white  text-white "><span > <img src='https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg' className='mr-2 mt-1 h-5 ' /></span> EN</button>
+       
+            <div class="hidden peer-hover:flex hover:flex  w-28  flex-col bg-white drop-shadow-lg mt-14 absolute">
+            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                   <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                   <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">English</label>
+           </div>
+           <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+            <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Hindi</label>
+            </div>
+            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+             <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+            <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Kannada</label>
 </div>
-<div className='text-gray-500 bg-white flex h-10 items-center rounded-lg'>
-    <a className='bg-gray- text-xs border-r px-2'>Deals <ArrowDropDownIcon/> </a>
-    <input className='rounded-sm h- w-[38rem] h-10' />
-    <p className='bg-yellow-400 h-10 w-12 rounded-r-lg flex justify-center items-center'>D</p>
-</div>
-<div>
-    <a className='text-white font-semibold flex space-x-1'> 
-    <img className='w-10' src='https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg'/> <p>EN <ArrowDropDownIcon/></p></a>
-</div>
-<div className='text-white flex flex-col'>
-    <a>Hello, sign in</a>
+        </div>
+    </div>
+
+
+        </div>
+
+        <div className='space-y-0 items-center border border-[#131921] hover:border-white '>
+            
+            {/* <p className='text-white  text-sm'>Hello, Sign Out</p>
+            <p className='text-bold text-xs text-white'>Accounts and List<ArrowDropDownIcon/></p> */}
+             <div className='h-12 px-1 flex'> 
+           
+           <div class="peer flex px-2 py-2 border border-[#131921] hover:border-white  text-white "><span ></span> Hello,<button onClick={()=>signot()}>Signout</button> </div>
+      
+           {/* <div class="hidden peer-hover:flex hover:flex  w-28  flex-col bg-white drop-shadow-lg mt-14 absolute">
+            <div className='bg-red-400 flex items-center justify-center h-12 w-32'>
+            <button onClick={()=>signot()}>Signout</button>
+            </div>
+          
+       </div> */}
+   </div>
+
     
-    <a className='font-semibold'>Account and Lists  <ArrowDropDownIcon/></a>
-</div>
-<div className='text-white flex flex-col'>
-    <a>Returns</a>
-    {/* <a><LocationOnIcon/></a> */} 
-    <a className='font-semibold'>& Orders</a>
-</div>
-<div className='text-white'>
-    <button className='flex items-center'><img className='w-10' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX8sw3JgdpvIw4VqADCWJ9Y_e4mVNDPHMt9dPnAj__ri5bRK01qjfBeYi5rTgrsxiSPgs&usqp=CAU'/>  Cart</button>
-</div>
+        </div>
+
+        <div className='space-y-0 items-center border border-[#131921] hover:border-white h-10 '>
+            
+            <p className='text-white text-sm'>Return</p>
+            <p className='text-bold text-xs text-white'>& Orders</p>
+
+        </div>
+
+        <div className='space-y-0 items-center border h-14 border-[#131921] hover:border-white px-2 flex'>
+            
+       <ShoppingCartCheckoutOutlinedIcon className='h-14 text-white' />
+            <p className='text-bold text-xl text-white'>
+                Cart</p>
+
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
   )
