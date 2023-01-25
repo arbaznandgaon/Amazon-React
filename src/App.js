@@ -1,23 +1,57 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar';
+import {getAuth , GoogleAuthProvider,signInWithPopup} from "firebase/auth"
+import Login from './Components/LogIn';
+import app from './Firebase'
+import { useState, useEffect } from 'react';
+import {getFirestore,doc, getDoc, setDoc} from "firebase/firestore"
 
 function App() {
+
+const [user, setUser] = useState(null)
+const auth= getAuth(app)
+const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
+
+async function checklogin(){
+  const docRef = doc(db, "users", user?.uid);
+  const docSnap = await getDoc(docRef);
+
+if (!docSnap.exists()) {
+  await setDoc(doc(db, "users", user?.uid), user);
+  
+} 
+}
+async function signUp(){
+
+  await signInWithPopup(auth, provider)
+  .then((result) => {
+    const {displayName,email,photoURL,uid} = result.user;
+    setUser({"displayName":displayName,"email":email,"photoURL":photoURL,"uid":uid});
+    console.log(displayName,email,photoURL,uid)
+  }).catch((error) => {
+    console.log(error)
+  });
+}
+
+
+
+useEffect(() => {
+if (!user){
+  return;
+}
+  checklogin()
+}, [user])
+
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+     {user? <Navbar/> : <Login login={signUp}/>}
     </div>
   );
 }
