@@ -10,7 +10,7 @@ function Navbar({signot,...props}) {
         
         <div className='h-16 w-screen flex items-center  space-x-2 px-2 py-1 bg-[#131921]' >
 
-        <img src='https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png' className='h-full w-32 border border-[#131921] hover:border-white '></img>
+        <img src='https://pngimg.com/uploads/amazon/amazon_PNG11.png'  className='w-28 flex items-center' ></img>
 
         <div className='space-y-1  items-center border border-[#131921] hover:border-white px-2 '>
             
@@ -20,9 +20,9 @@ function Navbar({signot,...props}) {
         </div>
 
         <div className='flex  h-12'> 
-            <p className='bg-slate-400 p-2  rounded-l border-yellow-300 text-base'>All<ArrowDropDownIcon></ArrowDropDownIcon></p>
+            <p className='bg-slate-400 p-2  rounded-l  text-base'>All<ArrowDropDownIcon/></p>
             <input placeholder='' className=' w-[48rem]'></input>
-            <button className='bg-yellow-400 w-10  px-2'><SearchIcon className='h-6'/></button>
+            <button className='bg-yellow-400 w-10 rounded-r px-2'><SearchIcon className='h-6'/></button>
         
 
             <div className='h-12 px-1 flex'> 
@@ -50,18 +50,14 @@ function Navbar({signot,...props}) {
 
         <div className='space-y-0 items-center border border-[#131921] hover:border-white '>
             
-            {/* <p className='text-white  text-sm'>Hello, Sign Out</p>
-            <p className='text-bold text-xs text-white'>Accounts and List<ArrowDropDownIcon/></p> */}
+      
              <div className='h-12 px-1 flex'> 
            
-           <div class="peer flex px-2 py-2 border border-[#131921] hover:border-white  text-white "><span ></span> Hello,<button onClick={()=>signot()}>Signout</button> </div>
+           <div class=" flex items-center px-2 py-2     text-white ">
+          <a> Hello</a> </div>
+            <button className='text-white hover:border-white' onClick={()=>signot()}>SignOut</button>
       
-           {/* <div class="hidden peer-hover:flex hover:flex  w-28  flex-col bg-white drop-shadow-lg mt-14 absolute">
-            <div className='bg-red-400 flex items-center justify-center h-12 w-32'>
-            <button onClick={()=>signot()}>Signout</button>
-            </div>
           
-       </div> */}
    </div>
 
     

@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import {
@@ -46,7 +46,7 @@ function App() {
   async function Signout() {
     await signOut(auth)
       .then(() => {
-        // setUser(false);
+        setUser(false);
       })
       .catch((error) => {
         console.log(error);
