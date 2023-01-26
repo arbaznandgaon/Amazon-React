@@ -1,16 +1,12 @@
 
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import {
-  getAuth,
-  signOut,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
+import {getAuth,signOut,GoogleAuthProvider,signInWithPopup,} from "firebase/auth";
 import Login from "./Components/LogIn";
 import app from "./Firebase";
 import { useState, useEffect } from "react";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import Display from "./Components/Display";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -62,7 +58,7 @@ function App() {
 
   return (
     <div className="App">
-      {user ? <Navbar signot={Signout} /> : <Login login={signUp} />}
+      {user ? <Display signot={Signout} /> : <Login login={signUp} />}
     </div>
   );
 }
