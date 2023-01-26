@@ -13,11 +13,11 @@ function Login(props) {
                   <a className='flex justify-start font-semibold text-3xl'>Login</a>
                   <div className='mr-20'>
                   <a className='mr-2 font-semibold'>Email or Mobile phone Number</a>
-                  <input className='border-2 hover:border-yellow-400 h-8 w-[20rem] border-black'/>
+                  <input className='border-2 rounded-sm hover:border-yellow-400 h-8 w-[20rem] border-black'/>
                   </div>
                   <div className='mr-'>
                   <a className='mr-2 font-semibold flex '><a>Password</a><a className='ml-32 text-sm text-blue-400'>Forget password</a></a>
-                  <input className='border-2 h-8 hover:border-yellow-400 w-[20rem] border-black'/>
+                  <input className='border-2 rounded-sm h-8 hover:border-yellow-400 w-[20rem] border-black'/>
                   </div>
                   <button className='w-80 py-2 rounded-sm bg-gradient-to-t from-yellow-400 to-yellow-200'>Login</button>
                   <div className='mr-16 flex items-center'>
