@@ -26,7 +26,7 @@ function Navbar({ signot, ...props }) {
             All
             <ArrowDropDownIcon />
           </p>
-          <input placeholder="" className=" w-[48rem]"></input>
+          <input placeholder="" className=" w-[52rem]"></input>
           <button className="bg-yellow-400 w-10 rounded-r px-2">
             <SearchIcon className="h-6" />
           </button>
@@ -43,7 +43,7 @@ function Navbar({ signot, ...props }) {
               EN
             </button>
 
-            <div class="hidden peer-hover:flex hover:flex  w-28  flex-col bg-white drop-shadow-lg mt-14 absolute">
+            {/* <div class="hidden peer-hover:flex hover:flex  w-28  flex-col bg-white drop-shadow-lg mt-14 absolute">
               <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
                 <input
                   id="bordered-radio-1"
@@ -59,7 +59,7 @@ function Navbar({ signot, ...props }) {
                   English
                 </label>
               </div>
-              <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+              {/* <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
                 <input
                   id="bordered-radio-1"
                   type="radio"
@@ -73,8 +73,8 @@ function Navbar({ signot, ...props }) {
                 >
                   Hindi
                 </label>
-              </div>
-              <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+              </div> */}
+              {/* <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
                 <input
                   id="bordered-radio-1"
                   type="radio"
@@ -88,22 +88,17 @@ function Navbar({ signot, ...props }) {
                 >
                   Kannada
                 </label>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
         </div>
 
         <div className="space-y-0 items-center border border-[#131921] hover:border-white ">
           <div className="h-12 px-1 flex">
             <div class=" flex items-center px-2 py-2     text-white ">
-              <a> Hello</a>{" "}
+              <a> Hello</a>
             </div>
-            <button
-              className="text-white hover:border-white"
-              onClick={() => signot()}
-            >
-              SignOut
-            </button>
+            
           </div>
         </div>
 
@@ -116,6 +111,12 @@ function Navbar({ signot, ...props }) {
           <ShoppingCartCheckoutOutlinedIcon className="h-14 text-white" />
           <p className="text-bold text-xl text-white">Cart</p>
         </div>
+        <button
+              className="text-white hover:border-white"
+              onClick={() => signot()}
+            >
+              SignOut
+            </button>
       </div>
     </div>
   );

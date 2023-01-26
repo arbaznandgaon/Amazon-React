@@ -26,12 +26,12 @@ function Login(props) {
                    </div>
                   </div>
                   <a className='font-bold'>OR</a><br/>
-                  <a className='font-semibold'> Login with Google</a><br/>
-                     <button onClick={()=> props.login()} className="bg-gradient-to-t from-yellow-400 to-yellow-200 flex items-center ml-24 space-x-1 px-4 border py-[6px] rounded-md">
+                  <a className='font-semibold ml-4'> Login with Google</a><br/>
+                     <button onClick={()=> props.login()} className="bg-gradient-to-t from-yellow-400 to-yellow-200 flex items-center ml-28 space-x-1 px-4 border py-[6px] rounded-md">
                     <img className=" h-5 w-5" src="//heathmont.imgix.net/bitcasino/images/google-oauth2.svg?auto=compress,format" loading="lazy" />
                         <span>Google</span>
                 </button> 
-                <a className='text-sm '>---------------New to Amazon?---------------</a><br/>
+                <a className='text-sm '>-----------------New to Amazon?-----------------</a><br/>
                 <button className='bg-gradient-to-t from-gray-300 to-gray-100 border border-black py-1 px-12 rounded-sm'>Create your Amazon account</button>
                 </div>
                 </div>
