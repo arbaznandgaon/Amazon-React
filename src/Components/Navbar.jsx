@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ShoppingCartCheckoutOutlinedIcon from "@mui/icons-material/ShoppingCartCheckoutOutlined";
 
-function Navbar({ signot, ...props }) {
+function Navbar({ signot,seller, ...props }) {
   return (
     <div>
       <div className="h-16 w-screen flex items-center  space-x-2 px-2 py-1 bg-[#131921]">
@@ -26,7 +26,7 @@ function Navbar({ signot, ...props }) {
             All
             <ArrowDropDownIcon />
           </p>
-          <input placeholder="" className=" w-[52rem]"></input>
+          <input placeholder="" className=" w-[40rem]"></input>
           <button className="bg-yellow-400 w-10 rounded-r px-2">
             <SearchIcon className="h-6" />
           </button>
@@ -43,53 +43,7 @@ function Navbar({ signot, ...props }) {
               EN
             </button>
 
-            {/* <div class="hidden peer-hover:flex hover:flex  w-28  flex-col bg-white drop-shadow-lg mt-14 absolute">
-              <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                <input
-                  id="bordered-radio-1"
-                  type="radio"
-                  value=""
-                  name="bordered-radio"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="bordered-radio-1"
-                  class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  English
-                </label>
-              </div>
-              {/* <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                <input
-                  id="bordered-radio-1"
-                  type="radio"
-                  value=""
-                  name="bordered-radio"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="bordered-radio-1"
-                  class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Hindi
-                </label>
-              </div> */}
-              {/* <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                <input
-                  id="bordered-radio-1"
-                  type="radio"
-                  value=""
-                  name="bordered-radio"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="bordered-radio-1"
-                  class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Kannada
-                </label>
-              </div> */}
-            {/* </div> */}
+        
           </div>
         </div>
 
@@ -117,6 +71,7 @@ function Navbar({ signot, ...props }) {
             >
               SignOut
             </button>
+            <button onClick={()=> seller()} className="text-white ">Sell Product</button>
       </div>
     </div>
   );

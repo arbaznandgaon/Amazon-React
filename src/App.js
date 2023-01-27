@@ -11,9 +11,15 @@ import ProductForm from "./Components/ProductForm";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [sell, setSell] = useState(null);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const db = getFirestore(app);
+
+   function Seller(){
+    console.log("Hey")
+    setSell(true)
+  }
 
   async function checklogin() {
     const docRef = doc(db, "users", user?.uid);
@@ -59,8 +65,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* {user ? <Display signot={Signout} /> : <Login login={signUp} />} */}
-      <ProductForm/>
+      {user ? <Display seller={Seller} signot={Signout} /> : <Login login={signUp} />}
+      {sell? <ProductForm/> : ""}
+      {/* <ProductForm/> */}
     </div>
   );
 }
