@@ -7,25 +7,27 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LanguageIcon from '@mui/icons-material/Language';
 import HelpIcon from '@mui/icons-material/Help';
 import StarIcon from '@mui/icons-material/Star';
-import { Global } from '@emotion/react';
 
 function AmazonProduct() {
   return (
-    <div className='bg-gray-500 w-screen h-max'>
+    <div className='bg-gray-500 w-scree h-max overflow-x-none'>
             <div className=''>
             <div className=' '>
-                <a className='text-3xl font-semibold'> Amazon Product Form</a> <br/>
-                <input placeholder='  Add Product Name'  className='border-2 w-1/2 h-10 rounded-t-lg'/>
-                <div className='bg-gray-300 mx-auto w-1/2 h-10 flex text-3xl items-center'>
-                    <StoreIcon fontSize='inherit' className=''/> <a className='text-sm'>Shop: 
-                    <span className='w-max px-2 py-1 border border-black bg-white'>Amazon <ArrowDropDownIcon/> </span></a>
+                <a className='text-3xl  font-semibold'> Amazon Product Form</a> <br/>
+                <input placeholder='  Add Product Name'  className='border-2 mt-2 py-2 w-1/2 h-10 rounded-t-lg'/>
+                <div className='bg-gray-300 mx-auto  w-1/2 h-10 space-x-2 flex text-5xl items-center'>
+                    <StoreIcon fontSize='inherit' className=''/> <a className='text-sm'>Shop:    
+                    <button className='w-max px-2 ml-2 py-1 border border-black bg-white'>Amazon <ArrowDropDownIcon/> 
+                   
+                    
+                    </button></a>
 
                 </div>
-                <div className='bg-white  w-1/2 mx-auto h-max py-2 flex  text-4xl '>
-                    <AttachFileIcon fontSize='inherit' className='rotate-45'/>
+                <div className='bg-white space-x-4 pl-2  w-1/2 mx-auto h-max py-2 flex  text-4xl '>
+                    <AttachFileIcon fontSize='inherit' className='rotate-45 mt-4'/>
                     <div className='text-sm fle'> 
                         <a className='flex justify-start'>Affiliat URL*:</a>
-                        <input className='w-[40rem] rounded-md h-8 border border-black ml-'/><br/>
+                        <input className='w-[42rem] rounded-md h-8 border border-black ml-'/><br/>
                         <a className='flex justify-start'>Enter your affiliat URL here</a>
                     </div><br/>
                 
@@ -87,8 +89,8 @@ function AmazonProduct() {
                             <input className='h-6 border rounded-lg border-black'/>
                         </div>
                         
-                    </div><div className='flex text-5xl text-gray-500 border border-gray-300 '>
-                        <LanguageIcon fontSize='inherit'/> 
+                    </div><div className='flex text-5xl text-gray-500 border pl-12 border-gray-300 '>
+                      
                         <div className='text-lg '>
                             <a className='flex justify-start'>Total Reviews:<HelpIcon/> </a>
                             <input className='h-6 border rounded-lg border-black'/>
