@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import Display from "./Components/Display";
 import ProductForm from "./Components/ProductForm";
+import AmazonProduct from "./Components/AmazonProduct";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -65,8 +66,9 @@ function App() {
 
   return (
     <div className="App">
-      {user ? <Display seller={Seller} signot={Signout} /> : <Login login={signUp} />}
-      {sell? <ProductForm/> : ""}
+      {/* {user ? <Display seller={Seller} signot={Signout} /> : <Login login={signUp} />} */}
+      {/* {sell? <ProductForm/> : ""} */}
+      <AmazonProduct/>
       {/* <ProductForm/> */}
     </div>
   );
