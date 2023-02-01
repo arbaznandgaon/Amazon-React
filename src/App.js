@@ -9,7 +9,8 @@ import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import Display from "./Components/Display";
 import ProductForm from "./Components/ProductForm";
 import AmazonProduct from "./Components/AmazonProduct";
-import NoRepeatInput from "./Components/NoRepeatInput";
+import ProductScreen from "./Components/ProductScreen";
+// import NoRepeatInput from "./Components/NoRepeatInput";
 
 
 function App() {
@@ -67,12 +68,14 @@ function App() {
   }, [user]);
 
   return (
-    <div className="App">
+    <div className="">
+      <Navbar user={user} seller={Seller} signot={Signout}/>
       {/* {user ? <Display seller={Seller} signot={Signout} /> : <Login login={signUp} />} */}
       {/* {sell? <ProductForm/> : ""} */}
       {/* <AmazonProduct/> */}
       {/* <ProductForm/> */}
-     <NoRepeatInput/>
+     {/* <NoRepeatInput/> */}
+     <ProductScreen/>
     </div>
   );
 }
