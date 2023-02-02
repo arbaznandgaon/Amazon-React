@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import ProductCard from './ProductCard'
+import ProductScreen from './ProductScreen'
 
 function Display({signot,seller,...props}) {
   return (
@@ -8,7 +9,7 @@ function Display({signot,seller,...props}) {
         {/* <Navbar seller={seller} signot={signot}/> */}
         <div  className="bg-[url('https://m.media-amazon.com/images/I/915O61IvnUL._SX3000_.jpg')]   bg-cover h-[38rem]"> 
       <div className='bg-gradient-to-t from-white via-transparent to-transparent h-screen'>
-      <div className="w-[94rem] space-y-?  grid grid-cols-9 space-x-2 pt-64 px-2">
+      <div  className="w-[94rem] space-y-?  grid grid-cols-9 space-x-2 pt-64 px-2">
       
                <ProductCard  
               
