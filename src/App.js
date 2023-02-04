@@ -69,7 +69,7 @@ function App() {
 
   return (
     <div className="">
-      <Navbar user={user} seller={Seller} signot={Signout}/>
+      <Navbar user={user} seller={Seller} signot={Signout} />
       {user ? <Display seller={Seller} signot={Signout} /> : <Login login={signUp} />}
       {/* {sell? <ProductForm/> : ""} */}
       {/* <AmazonProduct/> */}
