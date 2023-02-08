@@ -61,8 +61,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (!user) {
-      return;
+    if (!user) {  return
     }
     checklogin();
   }, [user]);
