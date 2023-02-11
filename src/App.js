@@ -14,7 +14,7 @@ import ProductScreen from "./Components/ProductScreen";
 
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null) ;
   const [sell, setSell] = useState(null);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
