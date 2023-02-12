@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import {getAuth,signOut,GoogleAuthProvider,signInWithPopup,} from "firebase/auth";
