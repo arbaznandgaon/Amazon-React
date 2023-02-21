@@ -29,7 +29,7 @@ function App() {
     const docSnap = await getDoc(docRef);
 
     if (!docSnap.exists()) {
-      await setDoc(doc(db, "users", user?.uid), user) ;
+      await setDoc(doc(db, "users", user?.uid), user);
     }
   }
   async function signUp() {
